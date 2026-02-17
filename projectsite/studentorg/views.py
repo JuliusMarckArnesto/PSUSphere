@@ -5,4 +5,4 @@ from studentorg.models import Organization
 class HomePageView(ListView):
     model = Organization
     context_object_name = 'home'
-    template_engine = 'home.html'
+    template_name = 'home.html'
