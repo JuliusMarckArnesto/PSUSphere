@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% load static %} {% block content %} 93 
+ <div class="content"> 94 
+   <div class="container-fluid"> 95 
+     <h4 class="page-title">Home</h4> 96 
+     <div class="row"> 97 
+       <div class="col-md-12"> 98 
+         <div class="card"> 99 
+           <div class="card-header"> 100 
+             <div class="card-title">List of Organizations</div> 101 
+             <div class="card-category">Page Subtitle</div> 102 
+           </div> 103 
+           <div class="card-body"> 104 
+             <table class="table table-striped mt-3"> 105 
+               <thead> 106 
+                 <tr> 107 
+                   <th scope="col">Name</th> 108 
+                   <th scope="col">College</th> 109 
+                   <th scope="col">Description</th> 110 
+                 </tr> 111 
+               </thead> 112 
+               <tbody> 113 
+                 {% for object in object_list %} 114 
+                 <tr> 115 
+                   <td>{{ object.name }}</td> 116 
+                   <td>{{ object.college }}</td> 117 
+                   <td>{{ object.description }}</td> 118 
+                 </tr> 119 
+                 {% endfor %} 120 
+               </tbody> 121 
+             </table> 122 
+             {% include 'includes/pagination.html' %} 123 
+           </div> 124 
+         </div> 125 
+       </div> 126 
+     </div> 127 
+   </div> 128 
+ </div> 129 
+{% endblock %} 
