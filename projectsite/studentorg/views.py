@@ -38,3 +38,20 @@ class OrgMemberList(ListView):
     context_object_name = 'orgmember'
     template_name = 'orgmember_list.html'
     paginate_by = 5
+
+class OrgMemberCreateView(CreateView):
+    model = OrgMember
+    form_class = OrgMemberForm
+    template_name = 'orgmember_form.html'
+    success_url = reverse_lazy('orgmember-list')
+
+class OrgMemberUpdateView(UpdateView):
+    model = OrgMember
+    form_class = OrgMemberForm
+    template_name = 'orgmember_form.html'
+    success_url = reverse_lazy('orgmember-list')
+
+class OrgMemberDeleteView(DeleteView):
+    model = OrgMember
+    template_name = 'orgmember_del.html'
+    success_url = reverse_lazy('orgmember-list') 
