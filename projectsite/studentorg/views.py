@@ -13,9 +13,11 @@ class HomePageView(ListView):
     template_name = 'home.html'
     
     def get_context_data(self, **kwargs):
+        #___TOTAL STUDENTS___
         context = super().get_context_data(**kwargs)
         context["total_students"] = Student.objects.count()
 
+        #___JOINED CURRENT YEAR___
         today = timezone.now().date()
         count = (
             OrgMember.objects.filter(
@@ -27,6 +29,13 @@ class HomePageView(ListView):
         )
 
         context["student_joined_this_year"] = count
+
+        #___NUMBER OF ORGANIZATIONS___
+        context["total_organizations"] = OrgMember.objects.count()
+
+        #___NUMBER OF PROGRAMS___
+        context["total_programs"] = Program.objects.count()
+
         return context
 #____ORGANIZATION____
 class OrganizationList(ListView):
