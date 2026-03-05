@@ -15,9 +15,9 @@ import os
 import socket
 
 if "pythonanywhere" in socket.gethostname():
-    SITE_ID = 2 
+    SITE_ID = 2 #production site (hypermicrowave.pythonanywhere.com)
 else:
-    SITE_ID = 1 
+    SITE_ID = 1 #local site (127.0.0:8000)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
