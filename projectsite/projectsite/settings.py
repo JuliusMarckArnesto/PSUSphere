@@ -17,7 +17,7 @@ import socket
 if "pythonanywhere" in socket.gethostname():
     SITE_ID = 2 #production site (hypermicrowave.pythonanywhere.com)
 else:
-    SITE_ID = 1 #local site (127.0.0:8000)
+    SITE_ID = 1 #local site (127.0.0.1:8000)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -88,6 +88,14 @@ ACCOUNT_SIGNUP_FIELDS = [
     "password1*",
     "password2*",
 ]
+
+# # Disable mandatory email verification for now
+# ACCOUNT_EMAIL_VERIFICATION = "none"
+
+# # Ensure email is not required to register (if you prefer)
+# ACCOUNT_EMAIL_REQUIRED = True
+# # Print emails to the console instead of sending them
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ROOT_URLCONF = 'projectsite.urls'
 
