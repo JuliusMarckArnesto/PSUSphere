@@ -174,37 +174,37 @@
 						</div>
 					</div>
 					<ul class="nav">
-						<li class="nav-item">
+						<li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
 							<a href="{% url 'home' %}">
 								<i class="la la-dashboard"></i>
 								<p>Dashboard</p>
 							</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item {% if request.resolver_match.url_name == 'organization-list' %}active{% endif %}">
 							<a href="{% url 'organization-list' %}">
 								<i class="la la-table"></i>
 								<p>Organization</p>
 							</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item {% if request.resolver_match.url_name == 'orgmember-list' %}active{% endif %}">
 							<a href="{% url 'orgmember-list' %}">
 								<i class="la la-keyboard-o"></i>
 								<p>Org. Member</p>
 							</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item {% if request.resolver_match.url_name == 'student-list' %}active{% endif %}">
 							<a href="{% url 'student-list' %}">
 								<i class="la la-th"></i>
 								<p>Students</p>
 							</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item {% if request.resolver_match.url_name == 'college-list' %}active{% endif %}">
 							<a href="{% url 'college-list' %}">
 								<i class="la la-bell"></i>
 								<p>College</p>
 							</a>
 						</li>
-						<li class="nav-item active">
+						<li class="nav-item {% if request.resolver_match.url_name == 'program-list' %}active{% endif %}">
 							<a href="{% url 'program-list' %}">
 								<i class="la la-font"></i>
 								<p>Program</p>
